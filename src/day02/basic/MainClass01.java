@@ -1,4 +1,4 @@
-package day01.basic;
+package day02.basic;
 
 /*
  * [[ 연산자 ]]
@@ -6,7 +6,7 @@ package day01.basic;
  * 	+, -, *, /, %(나머지값을 돌려줌) 
  * 
  */
-public class MainClass08 {
+public class MainClass01 {
 	public static void main(String[] args) {
 		int num1 = 10;
 		int num2 = 10;
