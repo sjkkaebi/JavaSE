@@ -31,7 +31,7 @@ public class MainClass09 {
 							
 				System.out.println("성적:" + result);
 		}
-		
+		 
 	}
 
 }

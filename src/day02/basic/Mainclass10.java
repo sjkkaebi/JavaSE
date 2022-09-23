@@ -10,19 +10,19 @@ public class Mainclass10 {
 		switch(num) {
 		case 0 :
 			System.out.println("0입니다.");
-			break;
+	///		break;
 		case 1 :
 			System.out.println("1입니다.");
-			break;
+	//		break;
 		case 2 :
 			System.out.println("2입니다.");
-			break;
+	//		break;
 		case 3 :
 			System.out.println("3입니다.");
-			break;
+	//		break;
 		default : 
 			System.out.println("0,1,2,3이 아닙니다.");
-			break;
+//			break;
 		}
 	}
 
