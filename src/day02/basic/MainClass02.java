@@ -18,7 +18,7 @@ public class MainClass02 {
 		
 		//0~99 까지 출력하는 for문(반복문, false가 될 때까지 true일 때 계속 실행됨)
 		for(int i=0; i < 100; i++) { //i가 100이 될 때까지 증감을 해줌 //(정수 지정; 조건 설정 트루인지 폴스인지 판단; i=i+1 마지막에 작동)
-			System.out.println(i+"");
+			System.out.print(i+ " ");
 		}
 		
 		System.out.println();
@@ -31,21 +31,24 @@ public class MainClass02 {
 		System.out.println("1감소 시킨후:" + num2);
 		
 		for(int i=99; i >= 0; i--) { 
-			System.out.println(i+"");
+			System.out.print(i+" ");
 		
 		}
 		
 		// num3: 1
-		// num3: 1
+		// num3: 0
 		
 		int num3 = 0;
-		System.out.println("num3:" + ++num3);
+		System.out.println("num3:" + ++num3);//실행 안됨
+		
+		num++;
+		System.out.println("num3:" + num3);
 		
 		num3=0;
-		System.out.println("num3" + num3++);
+		System.out.println("num3:" + num3++); //먼저 실행되는 값
 		
 		num3 =0;
-		System.out.println("num3" + num3); //먼저 실행되는 값
+		System.out.println("num3:" + num3); //바로 위랑 결과는 똑같음
 	}
 	
 

@@ -28,9 +28,9 @@ public class MainClass09 {
 					result = "양";
 				}
 				else {result = "가";
-							
+				}			
 				System.out.println("성적:" + result);
-		}
+		
 		 
 	}
 

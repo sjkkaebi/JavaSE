@@ -11,11 +11,13 @@ public class MainClass08 {
 		//어떤 수를 3으로 나눈 나머지를 출력하기
 		if(num%3 == 0) {
 			System.out.println("나머지가 0 입니다.");
-			}else if(num%3==1) {
-				System.out.println("나머지가 1 입니다.");				
-			}else {
-				System.out.println("나머지가 2 입니다.");
 			}
-	}
+		else if(num%3==1) {
+			System.out.println("나머지가 1 입니다.");				
+			}
+		else{
+			System.out.println("나머지가 2 입니다.");
+			}
+		}
 
 }
