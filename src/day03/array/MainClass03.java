@@ -21,6 +21,16 @@ public class MainClass03 {
 		//확장 for 문
 		for(String tmp : names)
 			System.out.println(tmp);
+		
+		int []scores = {0,1,2,3};
+		for(int tmp : scores) {
+			System.out.println(tmp);
+		}
+		
+		int[][] scores2 = new int[2][];
+		scores2[0] = new int[2];
+		scores2[1] = new int[3]; 
+		System.out.println(scores2[0][2]); //컴파일 에러. 
 	}
 	
 	

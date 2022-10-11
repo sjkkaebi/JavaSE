@@ -12,7 +12,6 @@ public class HandPhone {
 	public HandPhone(String name) {
 		this.model = model;
 		System.out.println("생성자로 " +name+ "이 전달되었습니다.");
-	
 	}
 	
 }

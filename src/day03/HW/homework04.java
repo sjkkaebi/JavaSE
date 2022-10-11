@@ -1,4 +1,4 @@
-package day03.z;
+package day03.HW;
 
 public class homework04 {
 	public static void main(String[] args) {
