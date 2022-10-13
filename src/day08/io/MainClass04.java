@@ -40,7 +40,7 @@ public class MainClass04 {
 				System.out.print(new String(c,0,readCharCnt));
 			}
 			
-			fw.flush(); //버퍼에 남아있는 거 다 빼줌
+			fw.flush();
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
