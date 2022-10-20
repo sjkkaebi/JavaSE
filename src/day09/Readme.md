@@ -49,12 +49,13 @@
     받고싶은 이미지 클릭 또는 검색  
     new 탭  
     vagrant init 이미지명  <- Vagrantfile 생성
+    						(.txt 확장자 지워주기)
 9. vagrant up  <- Vagrantfile 작성된 기준으로 이미지 다운로드 및 설치  
   
-9. vagrant 리눅스 접속  
+10. vagrant 리눅스 접속  
     vagrant ssh  
 
-10. 하이디SQL 설치
+11. 하이디SQL 설치
     https://www.heidisql.com/  
 
  * * *
