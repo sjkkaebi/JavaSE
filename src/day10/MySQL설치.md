@@ -46,7 +46,8 @@ vagrant ssh
 ```
 ### 8. HeidiSQL 설치
 8-1 HeidiSQL 설치   
-https://www.heidisql.com/   
-8-2 
-### 8. 기타
+https://www.heidisql.com/download.php?download=installer   
+8-2 Installer, 32/64 bit combined 클릭! 다운로드!
+
+### 9. 기타
 8-1 ubuntu mysql 구글 검색 후 따라해보는 것: mysql 최신 서버 세팅
