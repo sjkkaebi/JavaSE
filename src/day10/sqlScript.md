@@ -253,6 +253,7 @@ select empno no, ename na from emp;
 	1) 산술 연산자 ( +, -, *, / )
 
 - 부서번호가 10번인 사원들의 급여를 출력하되 10% 인상 된 금액으로 출력
+
 ```
 -- 부동소수점 오류
 select sal*1.1
@@ -266,11 +267,13 @@ WHERE deptno = 10;
 ```
 
 - 급여 비교하여 출력
+
 ```
 select sal,sal*1.1 from emp;
 ```
 
 - 칼럼명 바꿔서 출력
+
 ```
 select sal s, sal*1.1 ups from emp;
 ```
@@ -279,12 +282,14 @@ select sal s, sal*1.1 ups from emp;
   **2) 비교 연산자 (=, !=, > , < , >= , <= )**
 
 - 급여가 3000이상인 사원들의 모든 정보를 출력하세요
+
 ```
 select * from emp
 where sal >= 3000;
 ```
 
 - 부서번호가 30번이 아닌 사람들의 이름과 부서번호를 출력해보세요.
+
 ```
 select ename, deptno
 from emp
@@ -298,12 +303,14 @@ where deptno <> 30;
 **3) 논리 연산자 ( AND(&&), OR(||), NOT(!=) )**
 	
 - 부서번호가 10번이고 급여가 3000 이상인 사원들의 이름과 급여를 출력하세요
+
 ```
 select ename,sal
 from emp
 where deptno = 10 and sal >= 3000;
 ```
 - 직업이 SALESMAN 이거나 MANAGER인 사원의 사원번호와 부서번호를 출력하세요
+
 ```
 select empno,deptno
 from emp
@@ -314,12 +321,14 @@ where job='SALESMAN' or job='MANAGER';
 
 **<1> IN 연산자 (OR 연산자와 비슷한 역할)**
 - 부서번호가 10번이거나 20번인 사원번호와 이름, 부서번호를 출력하세요
+
 ```
 select empno,ename,deptno
 from emp
 where deptno=10 or deptno=20;
 ```
 - IN 연산자를 사용한다면?
+
 ```
 select empno,ename,deptno
 from emp
@@ -328,12 +337,14 @@ where deptno in(10,20)
 
 **<2> BETWEEN A AND B (A와 B 사이의 데이터를 얻어온다)	**
 - 급여가 1000과 2000 사이인 사원들의 사원번호, 이름, 급여를 출력하세요
+
 ```
 select empno,ename,sal
 from emp
 where sal >= 1000 and sal <=2000;
 ```
 - BETWEEN A AND B 연산자를 사용한다면?
+
 ```
 select empno,ename,sal
 from emp
@@ -341,6 +352,7 @@ where sal between 1000 and 2000;
 ```
 
 - 사원이름이 FORD와 SCOTT 사이의 사원들의 사원번호, 이름을 출력하세요
+
 ```
 select empno,ename
 from emp
@@ -351,7 +363,8 @@ where ename between 'FORD' and 'SCOTT';
 **<3> IS NULL (NULL인 경우 true), IS NOT NULL (NULL이 아닌 경우 true)**   
 > *null이면 비교자체가 불가하다*
 
-- 커미션이 NULL인 사원의 사원이름과 커미션을 출력하세요  
+- 커미션이 NULL인 사원의 사원이름과 커미션을 출력하세요 
+ 
 ```
 select ename,comm
 from emp
@@ -359,6 +372,7 @@ where comm is null;
 ```
 
 - 커미션이 NULL이 아닌 사원의 사원이름과 커미션을 출력해보세요
+
 ```
 select ename,comm
 from emp
@@ -367,6 +381,7 @@ where comm is not null;
 
 **<4> EXISTS (데이터가 존재하면 true)**
 - 사원이름이 'FORD'인 사원이 존재하면 사원의 이름과 커미션을 출력하기
+
 ```
 select ename,comm
 from emp
@@ -375,6 +390,7 @@ where exists(select ename from emp where ename='FORD');
 **<5> LIKE 연산자(문자열 비교) 중요!! **
 
 - 사원이름이 'J'로 시작하는 사원의 사원이름과 부서번호를 출력
+
 ```
 select ename,deptno
 from emp
@@ -382,6 +398,7 @@ where ename like 'J%';
 ```
 
 - 사원이름에 'J'가 포함되는 사원의 사원이름과 부서번호를 출력
+
 ```
 select ename,deptno
 from emp
@@ -389,12 +406,14 @@ where ename like '%J%';
 ```
 
 - 사원이름의 두 번째 글자가 'A'인 사원의 이름,급여,입사일을 출력하기
+
 ```
 select ename,sal,hiredate from emp
 where ename like '_A%';
 ```
 
 - 사원이름이 'ES'로 끝나는 사원의 이름, 급여, 입사일을 출력해보세요
+
 ```
 select ename,sal,hiredate
 from emp
@@ -402,6 +421,7 @@ where ename like '%ES';
 ```
 
 - 입사년도가 81년인 사원들의 입사일과 사원번호를 출력해보세요
+
 ```
 select hiredate,empno
 from emp
@@ -434,6 +454,7 @@ AND '1981-12-31'
 
 
 **<1> CONCAT(칼럼명,'붙일문자') => 문자열 연결함수**
+
 ```
 SELECT CONCAT(ename,'님')from emp;
 
@@ -443,22 +464,26 @@ select concat(ename,'님') name from emp;
      ~님
 ```
 **<2> LOWER('문자열') => 문자열을 소문자로 바꿔준다**
+
 ```
 select lower ('HELLO!')from dual;
 hello!
 ```
 **<3> UPPER('문자열') => 문자열을 대문자로 바꿔준다**
+
 ```
 select upper ('hello!') from dual;
 HELLO!
 ```
 **<4> LPAD('문자열', 전체 자리수, '남는 자리를 채울 문자') => 왼쪽에 채운다**
+
 ```
 select lpad('HI',10,'*')from dual;
 ********HI
 ```
 
 **<5> RPAD('문자열', 전체 자리수, '남는 자리를 채울 문자') => 오른쪽에 채운다**
+
 ```
 select rpad('HELLO','15','^')from dual;
 HELLO^^^^^^^^
@@ -466,6 +491,7 @@ HELLO^^^^^^^^
 
 **<6> REPLACE('문자열1','문자열2','문자열3')**
 => 문자열1에 있는 문자열 중 문자열2를 찾아서 문자열3으로 바꿔준다
+
 ```
 select replace('hello mimi','mimi','mama')from dual;
 hello mama
@@ -473,11 +499,13 @@ hello mama
 
 **<7> SUBSTR('문자열',N1,N2)**
 => 문자열의 N1번째 위치에서 N2개 만큼 문자열 빼오기
+
 ```
 select substr('ABCDEFGHIJ',3,5)from dual;
 ```
 
 ex> emp 테이블에서 ename(사원이름)의 두번째 문자가 'A'인 사원의 이름을 출력한다면?
+
 ```
 select ename
 from emp
@@ -489,26 +517,31 @@ from emp
 where ename like '_A%';
 ```
 **<8> ASCII('문자') => 문자에 해당하는 ASCII 코드 값을 반환한다**
+
 ```
 select ascii('A')from dual;
 ```
 **<9> LENGTH('문자열') => 문자열의 길이를 반환한다**
+
 ```
 select length('ABCDE')from dual;
 5
 ```
 ex> EMP 테이블에서 사원이름이 5자 이상인 사원들의 사번과 이름을 출력해보세요
+
 ```
 select empno,ename 
 from emp
 where length(ename) >= 5;
 ```
 **<10> LEAST('문자열1','문자열2','문자열3') => 문자열 중에서 가장 작은 값을 리턴한다**
+
 ```
 select least('AB','ABC','D')from dual;
 AB
 ```
 **<11> IFNULL(컬럼명,값) => 해당 칼럼이 NULL인 경우 정해진 값을 반환한다**
+
 ```
 select ename,IFNULL(comm,0) from emp;
 select ename,IFNULL(comm,100) C from emp; -- 100씩 커미션 주기
@@ -518,30 +551,36 @@ select ename,IFNULL(comm,100) C from emp; -- 100씩 커미션 주기
 
 
 **<1> ABS(숫자) => 숫자의 절대값을 반환함 (음수를 양수로 반환)**
+
 ```
 select abs(-10)from dual;
 ```
 **<2> CEIL(소수점이 있는 수) => 파라미터 값보다 같거나 가장 큰 정수는 반환(올림)**
+
 ```
 select ceil(3.1234) from dual;
 select ceil(5.9999) from dual;
 ```
 **<3> floor(소수점이 있는 수) => 파라미터 값보다 같거나 가장 작은 정수 반환(내림)**
+
 ```
 select floor(3.2241) from dual;
 select floor(2.888829) from dual;
 ```
 **<4> ROUND(숫자,자리수) => 숫자를 자리수 +1번째 위치에서 반올림한다**
+
 ```
 select round(3.22645,2) from dual;
 select round(5.2345,3) from dual;
 ```
 **<5> MOD (숫자1,숫자2) => 숫자1을 숫자2로 나눈 나머지를 리턴한다**
+
 ```
 select mod(10,3) from dual;
 ```
 
 **<6> TRUNCATE(숫자1,자리수) => 숫자1의 값을 소수점이하 자리수까지만 나타난다. 나머지는 잘라낸다**
+
 ```
 select truncate(12.23532576,2) from dual;
 ```
@@ -549,6 +588,7 @@ select truncate(12.23532576,2) from dual;
 **3) 날짜 함수 ( * 중요!! 자주 쓰인다 * )**
 
 **<1> 현재 시간을 리턴**
+
 ```
 -- 함수 시작 시점 값 반환
 select sysdate() from dual; 
@@ -561,57 +601,70 @@ sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 sudo service mysql restart
 ```
 **<2> 날짜 계산 (날짜,더해질월)**
+
 - 현재 시간에 1초 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 SECOND);
 ```
 - 현재 시간에 1분 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 MINUTE);
 ```
 - 현재 시간에 1시간 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 HOUR);
 ```
 - 현재 시간에 1일 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 DAY);
 ```
 - 현재 시간에 1달 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 MONTH);
 ```
 - 현재 시간에 1년 더하기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL 1 YEAR);
 ```
 - 현재 시간에 1년 빼기
+
 ```
 SELECT DATE_ADD(NOW(), INTERVAL -1 YEAR);
 ```
 
 **<3> LAST_DAY (날짜) => 해당날짜에 해당하는 달의 마지막 날짜를 반환한다**
+
 ```
 select last_day(now()) from dual;
 ```
 
 **<4> TIMESTAMPDIFF(단위,날짜1,날짜2) => 두 날짜 차이**
+
 ```
 select empno, TIMESTAMPDIFF(YEAR, hiredate, NOW()) from emp;
 ```
 
 **4) 날짜 형식 변환 함수 ( * 중요!!! * )**
 -DATE_FORMAT
+
 ```
 select DATE_FORMAT(NOW(),'%Y-%m-%d') from dual;
 ```
 
 **5) 숫자 변환 함수**
+
 ```
 select CAST('999' AS UNSIGNED)+1 from dual;
 ```
 
 **6) 날짜 변환 함수**
+
 ```
 select STR_TO_DATE('2012-12-12', '%Y-%m-%d') from dual;
 ```
@@ -621,6 +674,7 @@ select STR_TO_DATE('2012-12-12', '%Y-%m-%d') from dual;
 
 **1) COUNT(칼럼명) => 해당 칼럼이 존재하는 row의 갯수를 반환
 단, 저장된 데이터가 NULL인 칼럼은 세지 않는다. **
+
 ```
 select count(ename)from emp;
 
@@ -630,10 +684,12 @@ select count(*) from emp; -- 모든 행(row)의 갯수를 얻어온다
 ```
 
 **2)SUM(칼럼명) => 해당 칼럼의 값을 모두 더한 값을 러턴한다.**
+
 ```
 select sum(sal)from emp;
 ```
 **3) AVG(칼럼명) => 해당 칼럼의 모든 값을 더한 후, row의 갯수로 나눈 평균값을 리턴한다. 단 NULL은 제외된다.**
+
 ```
 select AVG(sal) from emp;
 
@@ -642,14 +698,17 @@ select AVG(comm) from emp;
 
 ex) comm이 null인 사원도 평균에 포함시켜서 출력을 하려면?
 hint : IFNULL()함수를 이용한다
+
 ```
 select avg(IFNULL(comm,0)) from emp;
 ```
 **4) MAX(칼럼명) => 최대값을 리턴한다**
+
 ```
 select max(sal)from emp;
 ```
 **5) MIN(칼럼명) => 최소값을 리턴한다**
+
 ```
 select min(sal)from emp;
 ```
@@ -657,18 +716,21 @@ select min(sal)from emp;
 #### GROUP BY 기준필드 => 기준필드를 기준으로 그룹으로 묶는다
 
 - 부서별 급여의 총합을 출력
+
 ```
 select deptno, sum(sal) 
 from emp
 group by deptno;
 ```
 - 부서별 급여의 평균값을 출력
+
 ```
 select deptno, avg(sal)
 from emp
 group by deptno;
 ```
 - 부서별 급여의 평균값을 반올림해서 소수첫째 자리 까지만 구해보세요
+
 ```
 select deptno,round(avg(sal),1) 
 from emp
@@ -676,6 +738,7 @@ group by deptno;
 ```
 
 - 직업별 최대 급여를 구해보세요
+
 ```
 select job,max(sal)
 from emp
@@ -684,6 +747,7 @@ group by job;
 
 - 급여가 1000인 이상인 사원들의 부서별 평균 급여의 반올림 값을 
 부서번호로 내림 차순해서 출력해보세요
+
 ```
 select deptno,round(avg(sal))
 from emp
@@ -693,15 +757,24 @@ order by deptno desc;
 ```
 - 급여가 2000 이상인 사원들의 부서별 평균 급여의 반올림 값을 
 평균급여의 반올림값으로 오름차순해서 출력해보세요
+
 ```
 select deptno,round(avg(sal))
 from emp
 where sal >= 2000
 group by deptno
 order by round(avg(sal)) asc;
+
+- 별칭 인식 순서: 가운데 세 줄은 인식 안함. 위랑 똑같은 결과 출력.
+select deptno,round(avg(sal)) AS avg_sal
+from emp
+where sal >= 2000
+group by deptno
+order by  avg_sal asc;
 ```
 - 각 부서별 같은 업무를 하는 사람의 인원수를 구하여
 부서번호,직업, 인원수를 출력해보세요
+
 ```
 select deptno,job,count(*)
 from emp
@@ -709,6 +782,7 @@ group by deptno,job;
 ```
 - 급여가 1000인 이상인 사원들의 부서별 평균 급여를 출력해보세요
 단, 부서별 평균 급여가 2000이상인 부서만 출력하세요
+
 ```
 select deptno, avg(sal)
 from emp
@@ -721,12 +795,13 @@ having avg(sal) >= 2000;
 - 하나의 테이블로 원하는 칼럼정보를 참조 할 수 없는 경우, 관련된 테이블을 논리적으로 결합하여 원하는 칼럼정보를 참조하는 방법을 JOIN 이라고 한다
  
 [ 형식 ]
-SELECT 칼럼명1, 칼럼명2.....
-FROM 테이블명1, 테이블명2.....
-WHERE JOIN 조건 AND 다른 조건.....
+SELECT 칼럼명1, 칼럼명2.....   
+FROM 테이블명1, 테이블명2.....   
+WHERE JOIN 조건 AND 다른 조건.....   
 
 
 - emp 테이블의 사원이름, 부서번호, 부서명을 출력해보세요
+
 ```
 select ename,emp.deptno,dname
 from emp
@@ -735,6 +810,7 @@ on emp.deptno = dept.deptno;
 ```
 
 - 급여가 3000에서 5000 사이의 사원이름과 부서명을 출력해보세요
+
 ```
 select ename,dname
 from emp
@@ -744,6 +820,7 @@ and sal between 3000 and 5000;
 ```
 
 - 부서명이 ACCOUNTING인 사원의 이름,입사일,부서번호,부서명을 출력해보세요
+
 ```
 select ename,hiredate,emp.deptno,dname
 from emp
@@ -763,6 +840,7 @@ and dname = 'ACCOUNTING';
 ```
 
 - 커미션이 null이 아닌 사원의 이름, 입사일, 부서명을 출력해보세요
+
 ```
 select e.ename,e.hiredate,d.dname
 from emp e
@@ -772,6 +850,7 @@ and e.comm is not null;
 ```
 
 - 각 사원의 이름과 매니저 이름을 출력하세요
+
 ```
 select e1.ename,e2.ename
 from emp e1
@@ -780,10 +859,11 @@ on e1.mgr = e2.empno;
 ```
 
 **3) OUTER JOIN 조인**
-- 한 쪽 테이블에는 해당하는 데이터가 존재하는데 다른 테이들에는 데이터가 존재하지 않을 때에도 모든 데이터를 추출하도록 하는 JOIN 방법
+- 한 쪽 테이블에는 해당하는 데이터가 존재하는데 다른 테이들에는 데이터가 존재하지 않을 때에도 모든 데이터를 추출하도록 하는 JOIN 방법(null 값도 포함해서 전체 데이터 출력)   
 
 - 사원번호, 부서번호, 부서명을 출력해보세요
 단, 사원이 근무하지 않는 부서 정보도 같이 출력해보세요
+
 ```
 select e.empno,d.deptno,d.dname
 from emp e
@@ -796,11 +876,13 @@ on e.deptno = d.deptno;
 
 
 **1. emp 테이블과 dept 테이블을 조인하여 부서번호,부서명,이름,급여를 출력해보세요**
+
 ```
 select d.deptno,d.dname,e.ename,e.sal
 from emp e,dept d;
 ```
 **2. 사원의 이름이 'ALLEN'인 사원의 부서명을 출력해보세요**
+
 ```
 select e.ename,d.dname
 from emp e
@@ -811,6 +893,7 @@ and e.ename='ALLEN';
 
 **3. 모든 사원의 이름, 부서번호, 부서명, 급여를 출력해보세요
 단,emp테이블에 없는 부서도 출력해보세요**
+
 ```
 select e.ename,d.deptno,d.dname,e.sal
 from emp e
@@ -854,6 +937,7 @@ on e1.mgr = e2.empno;
    (하나의 데이터만 리턴해주는 쿼리)
 
  - 사원번호가 7900번인 사원과 같은 직업을 갖는 사원의 사번과 이름을 출력해보세요
+ 
 ```
 select job from emp where empno = 7900;
 
@@ -865,15 +949,16 @@ CLERK
 
  
 select empno,ename from emp where job = 'CLERK';
-```
+
 - 합치면?
-```
+
 select empno,ename
 from emp
 where job = (select job from emp where empno = 7900);
 ```
 
 - 사원들의 평균 급여보다 급여를 많이 받는 사원들의 사원번호,이름,급여를 출력해보세요
+
 ```
 select empno,ename,sal
 from emp
@@ -881,6 +966,7 @@ where sal > (select avg(sal) from emp) ;
 ```
 
 - 사원번호가 7369인 사원과 같은 부서인 사원들의 부서번호, 이름, 급여를 출력해보세요
+
 ```
 select deptno, ename, sal
 from emp
@@ -889,6 +975,7 @@ where deptno = (select deptno from emp where empno = 7369);
 
 - 사원번호가 7900인 사원과 같은 부서이고, 사원번호가 7369번인 사원보다 많은 급여를 받는 
  사원의 이름,부서번호,급여를 출력해보세요	 
+ 
 ```
 select ename,deptno,sal
 from emp
@@ -898,6 +985,7 @@ and sal > (select sal from emp where empno = 7369);
 
 - 각 부서의 최소 급여가 부서번호가 30번인 부서의 최소 급여보다 
 많은 급여를 받는 부서의 부서번호, 최소 급여를 출력해보세요
+
 ```
 select deptno,min(sal)
 from emp
@@ -915,12 +1003,14 @@ having min(sal) > (select min(sal) from emp where deptno = 30);
 
 **<1> IN 연산자 (OR 연산자와 비슷한 역할)**  
  - 부서번호가 10번이거나 20번인 사원번호와 이름, 부서번호를 출력하세요
+ 
 ```
 select empno,ename,deptno
 from emp
 where deptno=10 or deptno=20;
 ```
 IN 연산자를 사용한다면?
+
 ```
 select empno,ename,deptno
 from emp
@@ -928,12 +1018,11 @@ where deptno in(10,20);
 ```
 
 **<2> EXISTS (데이터가 존재하면 true)**
- - 사원이름이 'FORD'인 사원이 존재하면 사원의 이름과 커미션을 출력하기  
+- 사원이름이 'FORD'인 사원이 존재하면 사원의 이름과 커미션을 출력하기  
 
-
-
--부서 번호가 10번인 사원들과 급여과 같은 급여를 받는 사원의 이름과 급여를 출력  
+- 부서 번호가 10번인 사원들과 급여과 같은 급여를 받는 사원의 이름과 급여를 출력  
 단, 10번 부서는 제외  
+
 ```
 select ename,sal,deptno
 from emp
@@ -948,6 +1037,7 @@ and deptno <> 10;
 ```
 
 - 부서번호가 10번인 사원들이 받는 급여보다 많은 급여를 받는 사원들의 이름과 급여를 출력해보세요
+
 ```
 select ename,sal
 from emp
@@ -957,6 +1047,7 @@ where sal > any(select sal from emp where deptno=10);
 - 부서번호가 10번인 사원들이 모든 사원들이 받는 급여보다 
 많은 급여를 받는 사원의 이름과 급여를 출력해보세요
 (한 명이라도 10번 부서의 사원보다 급여가 적으면 안된다)
+
 ```
 select ename,sal
 from emp
@@ -967,13 +1058,14 @@ where sal > all (select sal from emp where deptno=10);
 - 서브쿼리의 실행 결과가 여러개의 칼럼을 리턴할 때 사용
 
 - 부서번호가 30번인 사원들의 급여와 커미션이 같은 사원의 이름과 커미션을 출력해보세요
+
 ```
 select ename,comm,deptno
 from emp
 where (sal,comm) in (select sal,comm from emp where deptno=30);
 ```
 
-**<4> 상호 관련 서브쿼리 *****
+**<4> 상호 관련 서브쿼리 ***** (이중포문과 같음. 조건을 만족하면 select가 뜨고-로우가 하나 추가됨, 그 매칭이 끝날 때까지 도는 것)
 - 메인 쿼리 절에서 사용된 테이블이 서브 쿼리절에 다시 재사용되는 경우의 서브 쿼리이다
 
 - 사원 테이블에서 적어도 한 명의 사원으로부터 보고를 받을 수 있는 
@@ -992,6 +1084,7 @@ select empno,ename,job,hiredate
 from emp
 where empno in (select distinct(mgr)from emp);
 
+-- 마지막만 다름--
 select e1.empno,e1.ename,e1.job,e1.hiredate
 from emp e1,emp e2
 where e1.empno = e2.mgr;
@@ -1025,16 +1118,20 @@ where e1.empno = e2.mgr;
 
  
 - 연습용 테이블 만들기
-```
-create table member
-	(
-        num  int,
-        name varchar(30),
-        addr varchar(50),
-        PRIMARY KEY (`num`)
-	);
-(primary : null,중복 허용하지 않음. ID 값을 입력할 수 있는 키)
 
+```
+CREATE TABLE `member` (
+	`no` INT(11) NOT NULL,
+	`name` VARCHAR(10) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`address` VARCHAR(100) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`no`) USING BTREE
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;
+(primary : null,중복 허용하지 않음. ID 값을 입력할 수 있는 키. 고유식별키(이름은 같아도 번호는 모두 다른))
+
+insert into member (NO, NAME, address) VALUES (1,'김구리','노량진');   
 insert into member values(1,'김구리','노량진');
 insert into member values(2,'홍길동','우리집');
 insert into member values(3,'나야나','동대문');
@@ -1048,11 +1145,13 @@ insert into member values(3,'나야나','동대문');
  where 조건절
 
 ex) member 테이블의 내용 중 num 칼럼이 3인 회원의 주소를 인천으로 수정하세요
+
 ```
 update member set addr = '인천' where num = 3;
 update member set name = '김태호' where num = 1;
 ```
 ex) member 테이블의 내용 중 num 칼럼이 2인 회원의 이름과 주소를 '철수','강남'으로 바꿔보세요
+
 ```
 update member set name='철수',addr = '강남' where num = 2;
 ```
@@ -1062,6 +1161,7 @@ update member set name='철수',addr = '강남' where num = 2;
 delete from 테이블명 where 조건절
 
 ex) member 테이블에서 주소가 '강남'인 회원의 정보를 삭제해보세요
+
 ```
 delete from member where addr='강남'; 
 ```
@@ -1121,6 +1221,7 @@ create table test(num int,name varchar(20)); -테이블생성
 ```
 DESC test; --테이블 구조 보기
 ```
+
 ```
 ex) 테이블 복사하기
 create table dept2(deptno int,dname varchar(14),loc varchar(13));
@@ -1137,6 +1238,7 @@ create table dapt4 as select*from dept where 1=2;
 ```
 
 **2) ALTER : 객체를 변경할 때**
+
 ```
 desc simple;
 
@@ -1154,6 +1256,7 @@ alter table simple drop column addr;
 ```
 
 **3) DROP :  객체를 삭제할 때**
+
 ```
 drop table dept2;
 drop table dept3;
