@@ -173,6 +173,7 @@ ALTER TABLE `emp`
 
 **(1) SELECT 사용**
 - emo 테이블에서 사원번호, 사원이름, 직업을 출력하기.
+
 ```
 select empno, ename, job from emp;
 ```
@@ -180,6 +181,7 @@ select empno, ename, job from emp;
 
 - emp 테이블에서 사원번호, 급여, 부서번호를 출력해보세요.
 	단,급여가 많은 순서대로 출력
+	
 ```
 select empno,sal,deptno 
 from emp 
@@ -188,6 +190,7 @@ order by sal desc;
 
 - emp 테이블에서 사원번호, 급여, 입사일을 출력해보세요.
 	단,급여가 적은 순서대로 출력
+	
 ```
 select empno,sal,hiredate
 from emp
@@ -196,6 +199,7 @@ order by sal asc;
 
 - emp 테이블에서 직업,급여를 출력해보세요.
 단,직업명으로 오름차순,급여로 내림차순 정렬해서
+
 ```
 select job,sal
 from emp
@@ -205,12 +209,14 @@ order by job asc,sal desc;
 **(2) WHERE 절 사용하기 (조건을 주어서 검색하고자 할 때)**
 
 - emp 테이블에서 급여가 2000 이상인 사원의 사원번호, 사원이름, 급여 출력하기
+
 ```
 select empno,ename,sal
 from emp
 where sal >= 2000;
 ```
 - emp 테이블에서 부서번호가 10번인 사원들의 모든 정보를 출력하세요
+
 ```
 select * 
 from emp
@@ -218,6 +224,7 @@ where deptno = 10;
 ```
 	
 - emp 테이블에서 입사일이 '81/02/20'인 사원의 사원번호,이름,입사일을 출력해보세요
+
 ```
 select empno,ename,hiredate
 from emp
@@ -226,6 +233,7 @@ where hiredate = '81/02/20';
 
 - emp 테이블에서 직업이 'SALESMAN'인 사람들의 이름,직업,급여를 출력해보세요
 	단, 급여가 높은 순서대로
+	
 ```
 select ename,job,sal
 from emp
@@ -234,16 +242,19 @@ order by sal desc;
 ```
 
 **(3)ALIAS 사용하기 (칼럼에 별칭 붙이기)**
+
 ```
 select empno as "no", ename as "na" from emp;
 ```
 
 - 큰 따옴표 " " 생략 가능
+
 ```
 select empno as no, ename as na from emp;
 ```
 
 - as와 큰 따옴표 " " 는 생략이 가능하다 (공백문자가 있으면 안됨 = > 사원 번호)
+
 ```
 select empno no, ename na from emp;
 ```
