@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class MainClass01 {
 	public static void main(String[] args) throws SQLException {
 		Connection conn = null;
-		Statement stmt = null;
+		Statement stmt = null; //쓰지 마시길.. 자주쓰는 데이터는 메모리에 올라가 있는데 쿼리문이 하나만 바뀌어도 다른 쿼리로 인식해서 하드에서 불러올 수도 있음. 데이터가 많으면 서버가 다운될 수도. 
 		ResultSet rs = null;
 		
 		try {
