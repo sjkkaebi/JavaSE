@@ -26,7 +26,7 @@ public class MainClass02 {
 			
 			// 4. SQL 쿼리작성
 			String sql = "INSERT INTO emp (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) "
-					+ "VALUES(9988, 'PIKA', 'SALESMAN', 7788, '2022-10-25', 1000, 10, 30)";
+					+ "VALUES(9645, 'PIKA', 'SALESMAN', 6999, '2022-10-25', 1000, 10, 30)";
 			
 			int result = stmt.executeUpdate(sql);
 			
